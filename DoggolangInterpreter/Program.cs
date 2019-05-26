@@ -14,7 +14,8 @@ namespace DoggolangInterpreter {
 
 		private void Run(string filePath) {
 			var input = new AntlrInputStream(new FileStream(filePath, FileMode.Open)); 
-			Interpreter.Eval(input);
+			var returnValue = Interpreter.Eval(input);
+			Console.WriteLine(returnValue);
 		}
 	}
 }
