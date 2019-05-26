@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace DoggolangInterpreter
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
-    }
+namespace DoggolangInterpreter {
+	public class Program {
+		public static void Main(string[] args) {
+			new Program().Run(args[0]);
+		}
+
+		private void Run(string filePath) {
+			Interpreter.Eval(filePath);
+		}
+	}
 }

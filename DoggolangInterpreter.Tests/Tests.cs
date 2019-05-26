@@ -69,7 +69,8 @@ samantha"
 )]
 
 		public void TestProgram(int expectedReturnVal, string text) {
-			Assert.Fail();
+			var returnVal = Interpreter.Eval(text);
+			Assert.AreEqual(expectedReturnVal, returnVal);
 		}
 	}
 }
