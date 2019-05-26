@@ -1,4 +1,10 @@
 ﻿using System;
+using System.IO;
+using Antlr4.Runtime;
+
+// Without this we have warnings when building the generated Antlr code
+// https://github.com/tunnelvisionlabs/antlr4cs/issues/247
+[assembly:CLSCompliant(false)]
 
 namespace DoggolangInterpreter {
 	public class Program {
@@ -7,7 +13,8 @@ namespace DoggolangInterpreter {
 		}
 
 		private void Run(string filePath) {
-			Interpreter.Eval(filePath);
+			var input = new AntlrInputStream(new FileStream(filePath, FileMode.Open)); 
+			Interpreter.Eval(input);
 		}
 	}
 }

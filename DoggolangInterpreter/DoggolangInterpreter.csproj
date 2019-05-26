@@ -5,4 +5,16 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Antlr4" Version="4.6.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Antlr4 Update="Doggolang.g4">
+      <CustomToolNamespace>DoggolangInterpreter.Generated</CustomToolNamespace>
+      <Listener>False</Listener>
+      <Visitor>True</Visitor>
+    </Antlr4>
+  </ItemGroup>
+
 </Project>

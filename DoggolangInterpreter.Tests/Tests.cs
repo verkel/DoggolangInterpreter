@@ -1,3 +1,4 @@
+using Antlr4.Runtime;
 using NUnit.Framework;
 
 namespace DoggolangInterpreter {
@@ -46,7 +47,7 @@ quark"
 
 // Please run this very important code and return the result and your interpreter source code to us as soon as possible:
 
-[TestCase(42,
+[TestCase(64185,
 @"samantha AWOO 1
 hooch AWOO 500
 einstein AWOO 10
@@ -69,7 +70,7 @@ samantha"
 )]
 
 		public void TestProgram(int expectedReturnVal, string text) {
-			var returnVal = Interpreter.Eval(text);
+			var returnVal = Interpreter.Eval(new AntlrInputStream(text));
 			Assert.AreEqual(expectedReturnVal, returnVal);
 		}
 	}
