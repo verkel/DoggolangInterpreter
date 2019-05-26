@@ -1,3 +1,5 @@
 language: csharp
 solution: DoggolangInterpreter.sln
-dotnet: 2.2
+dist: bionic
+mono: none
+dotnet: 2.2.105
